@@ -1,0 +1,66 @@
+export default function AuditPage() {
+  return (
+    <div className="prose prose-lg max-w-none">
+      <h1>Audit</h1>
+      <p>
+        Hash-chained audit trail for compliance and debugging. Every operation is logged with
+        cryptographic verification for tamper-evident logs.
+      </p>
+
+      <h2>Query Audit Events</h2>
+      <p><strong>Endpoint:</strong> <code>GET /v1/audit</code></p>
+      <p>Query audit events with filtering and pagination.</p>
+
+      <h3>Query Parameters</h3>
+      <ul>
+        <li><code>agent_id</code> (required): Agent ID</li>
+        <li><code>operations</code> (optional): Filter by operation types (comma-separated)</li>
+        <li><code>limit</code> (optional): Maximum number of results (default: 100)</li>
+        <li><code>offset</code> (optional): Pagination offset</li>
+        <li><code>start_time</code> (optional): Start time for filtering (ISO 8601)</li>
+        <li><code>end_time</code> (optional): End time for filtering (ISO 8601)</li>
+      </ul>
+
+      <h2>Get Audit Event</h2>
+      <p><strong>Endpoint:</strong> <code>GET /v1/audit/:id</code></p>
+      <p>Get a specific audit event by ID.</p>
+
+      <h2>Verify Chain Integrity</h2>
+      <p><strong>Endpoint:</strong> <code>POST /v1/audit/verify</code></p>
+      <p>Verify that the audit chain hasn&apos;t been tampered with.</p>
+
+      <h3>Request</h3>
+      <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg"><code>{`POST /v1/audit/verify
+Content-Type: application/json
+X-API-Key: your-api-key
+
+{
+  "agent_id": "agt_abc123"
+}`}</code></pre>
+
+      <h3>Response</h3>
+      <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg"><code>{`{
+  "valid": true,
+  "events_checked": 150,
+  "chain_intact": true
+}`}</code></pre>
+
+      <h2>Export Audit Logs</h2>
+      <p><strong>Endpoint:</strong> <code>POST /v1/audit/export</code></p>
+      <p>Export audit logs for compliance reporting.</p>
+
+      <h3>Request</h3>
+      <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg"><code>{`POST /v1/audit/export
+Content-Type: application/json
+X-API-Key: your-api-key
+
+{
+  "agent_id": "agt_abc123",
+  "format": "json",
+  "start_time": "2025-01-01T00:00:00Z",
+  "end_time": "2025-01-31T23:59:59Z"
+}`}</code></pre>
+    </div>
+  )
+}
+

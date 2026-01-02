@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 15px;
+  }
+  
+  body {
+    @apply text-gray-900 bg-white antialiased;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+}
+
+.anchor-link {
+  opacity: 0;
+  margin-left: 0.5rem;
+  transition: opacity 0.2s;
+}
+
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  opacity: 1;
+}
+
+.prose {
+  font-size: 0.9375rem;
+}
+
+.prose pre {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  overflow-x: auto;
+  font-size: 0.8125rem;
+}
+
+.prose code {
+  background-color: #f1f5f9;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.8125rem;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
