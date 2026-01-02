@@ -1,0 +1,87 @@
+# Anchor API and SDK Documentation for LLMs
+
+This file provides an overview of the Anchor API and SDK documentation structure for AI assistants.
+
+## Base Information
+
+- **Product**: Anchor - Identity Infrastructure for AI Agents
+- **Base URL**: https://api.getanchor.dev
+- **Documentation**: https://docs.getanchor.dev
+- **GitHub**: https://github.com/anchorco/anchor-sdk
+
+## Core Value Proposition
+
+Anchor provides three main capabilities:
+1. **Policy Enforcement** - Block PII, secrets, and custom patterns before storage
+2. **Hash-Chained Audit Trail** - Every operation logged with cryptographic verification
+3. **State Snapshots & Rollback** - Checkpoint and restore agent state
+
+## API Structure
+
+The Anchor API is organized around 5 core namespaces:
+
+1. **Agents** (`/agents`) - Agent registry and lifecycle management
+2. **Config** (`/config`) - Versioned agent configuration
+3. **Data** (`/data`) - Governed key-value data storage with policy enforcement
+4. **Checkpoints** (`/checkpoints`) - State snapshots and rollback
+5. **Audit** (`/audit`) - Hash-chained audit trail
+
+## SDKs Available
+
+- **Python SDK**: `pip install anchorai` - Full API coverage
+- **TypeScript SDK**: `npm install anchorai` - Full API coverage
+
+## Documentation Sections
+
+### API Reference
+- Base URL: https://api.getanchor.dev
+- Authentication: X-API-Key header
+- All endpoints documented with request/response examples
+- Error handling and rate limits
+
+### Guides
+- **Agents**: Registering agents, lifecycle management
+- **Memory**: Storing and retrieving agent memory
+- **Policies**: Blocking PII, secrets, setting retention
+- **State & Rollback**: Checkpoints, recovering from corruption
+- **Audit**: Querying logs, verifying integrity
+- **Compliance**: Data export, deletion certificates
+
+### SDK Documentation
+- Python SDK reference with examples
+- TypeScript SDK reference with examples
+- Framework integrations (LangChain, CrewAI, Mem0)
+
+## Quick Start
+
+```python
+from anchor import Anchor
+
+anchor = Anchor(api_key="your-api-key")
+agent = anchor.agents.create("support-bot")
+anchor.config.update(agent.id, {"policies": {"block_pii": True}})
+result = anchor.data.write(agent.id, "key", "value")
+```
+
+## Key Concepts
+
+- **Agents**: Registered AI entities with persistent identity
+- **Policies**: Rules that block certain data (no-pii, no-secrets, retention)
+- **Checkpoints**: Snapshots of agent state for rollback
+- **Audit Trail**: Hash-chained log of all operations
+
+## Common Use Cases
+
+1. **Policy-Enforced Memory**: Store agent memory with automatic PII/secrets blocking
+2. **State Recovery**: Use checkpoints to rollback corrupted agent state
+3. **Compliance**: Query audit logs for security reviews
+4. **Multi-Agent Systems**: Manage multiple agents with shared policies
+
+## For More Information
+
+- Full API Reference: /api
+- Python SDK Docs: /sdk/python
+- TypeScript SDK Docs: /sdk/typescript
+- Guides: /guides
+
+
