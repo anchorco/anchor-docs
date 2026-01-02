@@ -1,6 +1,9 @@
 # Anchor Documentation Site
 
-Documentation website for the Anchor API and SDK, hosted at docs.getanchor.dev
+![website](https://img.shields.io/website?url=https%3A%2F%2Fdocs.getanchor.dev%2F)
+![](https://img.shields.io/github/commits-since/anchorco/anchor-sdk/latest.svg)
+
+Documentation website for the Anchor API and SDK, hosted at [docs.getanchor.dev](docs.getanchor.dev).
 
 ## Development
 
@@ -20,7 +23,9 @@ npm start
 
 ## Deployment
 
-This site is configured for deployment on Vercel. It will be available at `docs.getanchor.dev` (domain configured in Vercel).
+This site is configured for deployment on Vercel. 
+
+It will be available at `docs.getanchor.dev` (domain configured in Vercel).
 
 ## Structure
 
