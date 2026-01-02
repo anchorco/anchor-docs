@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    {
+      "source": "/llms.txt",
+      "destination": "/api/llms"
+    }
+  ]
+}
+
+
+
