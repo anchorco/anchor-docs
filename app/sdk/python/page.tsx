@@ -2,7 +2,7 @@ export default function PythonSdkPage() {
   return (
     <div className="prose prose-lg max-w-none">
       <h1>Python SDK</h1>
-      
+
       <p className="lead">
         The Anchor Python SDK provides a full-featured client for the Anchor API with support
         for framework integrations, type hints, and comprehensive error handling.
@@ -91,7 +91,7 @@ print(verification.valid)  # True`}</code></pre>
       </table>
 
       <h2>Framework Integrations</h2>
-      
+
       <h3>LangChain</h3>
       <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg"><code>{`from anchor.integrations.langchain import AnchorMemory
 
@@ -106,7 +106,7 @@ memory = AnchorCrewMemory(anchor=anchor)
 
       <h3>Mem0</h3>
       <p>
-        Anchor wraps Mem0 to add policy enforcement, audit trails, and checkpoints. Mem0 handles 
+        Anchor wraps Mem0 to add policy enforcement, audit trails, and checkpoints. Mem0 handles
         semantic memory and retrieval; Anchor adds governance.
       </p>
       <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg"><code>{`from anchor.integrations.mem0 import AnchorMem0
@@ -119,6 +119,28 @@ wrapped = AnchorMem0(anchor=anchor, agent_id=agent.id, mem0_client=Memory())
 # Anchor handles "what is the agent allowed to remember?"
 result = wrapped.add("User prefers dark mode", user_id="user_123")
 print(result.allowed)  # True or False based on policies`}</code></pre>
+
+      <h2>Protocol Integrations</h2>
+      <h3>MCP (Model Context Protocol)</h3>
+      <p>
+        Anchor also integrates with agent protocols to add governance to tooling and context management.
+      </p>
+      <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg">
+        <code>{`
+    from anchor.integrations.mcp import AnchorMCPServer
+    
+    # Wrap your MCP server with Anchor governance
+    wrapped_server = AnchorMCPServer(
+        anchor=anchor,
+        agent_id=agent.id,
+        base_server=your_mcp_server
+    )
+    # Start server (governance hooks called automatically)
+    wrapped_server.start()
+
+    # Stop server once done
+    wrapped_server.stop()`}</code>
+      </pre>
 
       <h2>Error Handling</h2>
       <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg"><code>{`from anchor import (
