@@ -124,7 +124,6 @@ print(result.allowed)  # True or False based on policies`}</code></pre>
       <h3>MCP (Model Context Protocol)</h3>
       <p>
         Anchor also integrates with agent protocols to add governance to tooling and context management.
-        Note: Minimal wrapper for MCP servers. Enforcement and auditing will be added incrementally.
       </p>
       <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg">
         <code>{`
