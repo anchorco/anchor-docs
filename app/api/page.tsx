@@ -121,17 +121,9 @@ export default function ApiPage() {
         <li>QA metrics</li>
       </ul>
 
-      <p>
-        <strong>⚠️ Available via Direct API Only (Coming in v1.1+):</strong>
-      </p>
-      <ul>
-        <li>Compliance API (<code>/compliance/*</code>) - GDPR/CCPA/AI Act report generation</li>
-        <li>Knowledge Graph API (<code>/knowledge/*</code>) - Schema management, entity extraction, graph queries</li>
-      </ul>
-
       <h2>Rate Limits</h2>
       <p>
-        API requests are rate-limited per workspace:
+        API requests are rate-limited per API key:
       </p>
       <ul>
         <li><strong>Default:</strong> 1000 requests per minute</li>

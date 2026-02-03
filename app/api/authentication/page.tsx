@@ -26,7 +26,10 @@ export default function AuthenticationPage() {
 
       <h2>Getting Your API Key</h2>
       <p>
-        Sign up at <a href="https://app.getanchor.dev" target="_blank" rel="noopener noreferrer">app.getanchor.dev</a> to get your API key and workspace ID.
+        Sign up at <a href="https://getanchor.dev" target="_blank" rel="noopener noreferrer">getanchor.dev</a> to get your API key.
+      </p>
+      <p>
+        <strong>Important:</strong> Your API key is shown only once during signup. Copy it immediately and store it securely!
       </p>
 
       <h2>HTTPS Required</h2>
@@ -64,6 +67,10 @@ const response = await fetch('https://api.getanchor.dev/v1/agents', {
     </div>
   )
 }
+
+
+
+
 
 
 

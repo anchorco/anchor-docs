@@ -10,7 +10,10 @@ export default function GettingStartedPage() {
 
       <h2>1. Get an API Key</h2>
       <p>
-        Sign up at <a href="https://app.getanchor.dev" target="_blank" rel="noopener noreferrer">app.getanchor.dev</a> to get your API key and workspace ID.
+        Sign up at <a href="https://getanchor.dev" target="_blank" rel="noopener noreferrer">getanchor.dev</a> to get your API key.
+      </p>
+      <p>
+        <strong>Important:</strong> Your API key is shown only once during signup. Copy it immediately and store it securely!
       </p>
 
       <h2>2. Install the SDK</h2>
