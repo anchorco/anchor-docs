@@ -18,13 +18,13 @@ Anchor provides three main capabilities:
 
 ## API Structure
 
-The Anchor API is organized around 5 core namespaces:
+The Anchor API is organized around 5 core namespaces (all under `/v1` prefix):
 
-1. **Agents** (`/agents`) - Agent registry and lifecycle management
-2. **Config** (`/config`) - Versioned agent configuration
-3. **Data** (`/data`) - Governed key-value data storage with policy enforcement
-4. **Checkpoints** (`/checkpoints`) - State snapshots and rollback
-5. **Audit** (`/audit`) - Hash-chained audit trail
+1. **Agents** (`/v1/agents`) - Agent registry and lifecycle management
+2. **Config** (`/v1/agents/:agentId/config`) - Versioned agent configuration
+3. **Data** (`/v1/agents/:agentId/data`) - Governed key-value data storage with policy enforcement
+4. **Checkpoints** (`/v1/agents/:agentId/checkpoints`) - State snapshots and rollback
+5. **Audit** (`/v1/agents/:agentId/audit`) - Hash-chained audit trail
 
 ## SDKs Available
 
@@ -57,6 +57,7 @@ The Anchor API is organized around 5 core namespaces:
 ```python
 from anchor import Anchor
 
+# Initialize with just your API key (workspace is handled automatically)
 anchor = Anchor(api_key="your-api-key")
 agent = anchor.agents.create("support-bot")
 anchor.config.update(agent.id, {"policies": {"block_pii": True}})

@@ -1,0 +1,14 @@
+# Ignore files that shouldn't be deployed
+.DS_Store
+*.log
+.env*.local
+.vercel
+.next
+node_modules
+
+
+
+
+
+
+

@@ -86,7 +86,36 @@ export default function ErrorsPage() {
   "error": "Bad Request",
   "message": "Invalid request body",
   "code": "invalid_request",
-  "param": "workspaceId"
+  "param": "name"
+}`}</code></pre>
+
+      <h2>Common Error Examples</h2>
+      
+      <h3>401 Unauthorized - Invalid API Key</h3>
+      <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg"><code>{`{
+  "error": "Unauthorized",
+  "message": "Invalid or expired API key."
+}`}</code></pre>
+
+      <h3>404 Not Found - Agent Not Found</h3>
+      <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg"><code>{`{
+  "error": "Agent not found"
+}`}</code></pre>
+
+      <h3>403 Forbidden - Policy Violation</h3>
+      <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg"><code>{`{
+  "key": "user:123:email",
+  "allowed": false,
+  "blocked_by": "policy:block_pii",
+  "reason": "Value contains email pattern",
+  "audit_id": "aud_xyz789"
+}`}</code></pre>
+
+      <h3>429 Too Many Requests - Rate Limit</h3>
+      <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg"><code>{`{
+  "error": "Too Many Requests",
+  "message": "Rate limit exceeded. Please retry after 60 seconds.",
+  "retry_after": 60
 }`}</code></pre>
 
       <h3>Error Attributes</h3>

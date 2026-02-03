@@ -105,11 +105,9 @@ anchor.agents.delete(agent.id, preserve_audit=True)`}</code></pre>
 const anchor = new Anchor({ apiKey: 'anc_...' });
 
 // Create agent
-const agent = await anchor.agents.create({
-  name: 'support-bot',
-  description: 'Customer support agent',
-  owner: 'team:support',
-  tags: ['production']
+const agent = await anchor.agents.create('support-bot', {
+  environment: 'production',
+  version: '2.0'
 });
 
 console.log(\`Agent ID: \${agent.id}\`);
@@ -119,6 +117,11 @@ const fetched = await anchor.agents.get(agent.id);
 
 // List agents
 const agents = await anchor.agents.list({ status: 'active' });
+
+// Update agent
+await anchor.agents.update(agent.id, {
+  description: 'Updated description'
+});
 
 // Suspend/activate
 await anchor.agents.suspend(agent.id);
